@@ -7,6 +7,16 @@
   <link rel="stylesheet" media="all" href="docco.css" />
 </head>
 <body>
+ <script language="javascript" src="jquery.min.js"></script>
+ <script language="javascript" src="jquery.tableofcontents.min.js"></script>
+ <script language="javascript" src="jquery.imagefit.js"></script>
+ <script language="javascript">function addTOC() {
+  $("tr#section-1").after($("<tr><td class='docs'><ul id='toc'></ul></td><td class='code'></td></tr>"));
+  $("#toc").tableOfContents(null, {startLevel: 2});
+}
+  $(function () { addTOC(); $('img').imgscale(); })
+  </script>
+
   <div id="container">
     <div id="background"></div>
     <% if (sources.length > 1) { %>
